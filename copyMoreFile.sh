@@ -2,7 +2,8 @@
 echo '请输入原目录路径：'
 read sdir1
 
-echo '请输入目标目录路径：'
+echo '请输入目标目录路径（用逗号隔开）：'
+
 read ddir
 
 a=$(echo "$ddir" | awk -F, '{print NF}')
