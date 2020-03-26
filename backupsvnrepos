@@ -23,7 +23,8 @@ for reposname in $(ls $SVN_REPOROOT)
 do  
 	#echo "$reposname"
 	#running  backup
-	$SVN_ADMIN hotcopy $SVN_REPOROOT/$reposname $PATH_DATA/$reposname
+	$SVN_ADMIN hotcopy $SVN_REPOROOT/$reposname $PATH_DATA/$reposname   
+	#--clean-logs    #remove redundant Berkeley DB(svn) log files
 	#return 
 	echo  $?   $DATE  >>/var/log/svn_backupLog
 done 
