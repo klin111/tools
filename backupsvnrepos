@@ -1,0 +1,28 @@
+#!/bin/bash
+#build date:2020-3-26
+#author:klin111@qq.com
+#description: backup svn repostorys 
+#Subversion decritory and file
+SVN_HOME=/usr/bin/  
+SVN_ADMIN=$SVN_HOME/svnadmin  
+SVN_REPOROOT=/home/svn/
+
+#backup file path
+DATE=$(date '+%Y-%m-%d-%H_%M_%S')  
+PATH_DATA=/home/svn_hotback/backup_data/$DATE
+  
+if [ ! -d "PATH_DATA" ];then  
+	mkdir -p $PATH_DATA  
+fi
+
+#cd $SVN_REPOROOT  
+#SVN_REPOROOT  Search reposProjectName
+for reposname in $(ls $SVN_REPOROOT)
+  
+do  
+	echo "$reposname"
+	#running  backup
+	#$SVN_ADMIN hotcopy $SVN_REPOROOT/$reposname $PATH_DATA/$reposname
+	#return 
+	echo  $?   $DATE  >>/var/log/svn_backupLog
+done 
