@@ -8,6 +8,7 @@ SVN_ADMIN=$SVN_HOME/svnadmin
 SVN_REPOROOT=/home/svn/
 
 #backup file path
+#date is static value
 DATE=$(date '+%Y-%m-%d-%H_%M_%S')  
 PATH_DATA=/home/svn_hotback/backup_data/$DATE
   
