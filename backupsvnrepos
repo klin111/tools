@@ -20,9 +20,9 @@ fi
 for reposname in $(ls $SVN_REPOROOT)
   
 do  
-	echo "$reposname"
+	#echo "$reposname"
 	#running  backup
-	#$SVN_ADMIN hotcopy $SVN_REPOROOT/$reposname $PATH_DATA/$reposname
+	$SVN_ADMIN hotcopy $SVN_REPOROOT/$reposname $PATH_DATA/$reposname
 	#return 
 	echo  $?   $DATE  >>/var/log/svn_backupLog
 done 
