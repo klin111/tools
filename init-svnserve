@@ -3,7 +3,7 @@
 # description: svn server in centos6
 
 
-
+.  /etc/init.d/functions
 SVN_HOME=/usr/local/svn/sunny  
 
 if [ ! -f "/usr/bin/svnserve" ]  
@@ -35,9 +35,9 @@ case "$1" in
         pid=`ps aux | grep svnserve | grep -v "grep" | awk '{print $2}'`
         if [ $svnport -eq 3690 ]
         then
-                echo "SVN Server (pid:$pid) is running..."
+                echo "SVN Server (pid:$pid) is running..."  success
         else
-                echo "SVN Server was stoped..."
+                echo "SVN Server was stoped..."   failure
         fi
           
           ;;
