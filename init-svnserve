@@ -35,9 +35,9 @@ case "$1" in
         pid=`ps aux | grep svnserve | grep -v "grep" | awk '{print $2}'`
         if [ $svnport -eq 3690 ]
         then
-                echo "SVN Server (pid:$pid) is running..."  success
+                action  "SVN Server (pid:$pid) is running..."  /bin/true
         else
-                echo "SVN Server was stoped..."   failure
+                action  "SVN Server was stoped..."      /bin/false
         fi
           
           ;;
